@@ -1,0 +1,239 @@
+/* intended for use with vscode/foam extension amrkdown rendering */
+:root {
+  /* Color Scheme */
+  --primary-color: #08bdba;
+  --secondary-color: #ffe97b;
+  --accent-color: #009670;
+  --success-color: #42be65;
+  --text-color: #dde1e6;
+  --background-base: #161616;
+  --background-medium: #262626;
+  --highlight-green: #009670;
+  --highlight-pink: #ee5395;
+  --highlight-yellow: #ffe97b;
+
+  /* Borders */
+  --border-width: 0.15em;
+  --border-radius: 0.5em;
+  --border-style: solid;
+
+  /* Typography */
+  --body-font: "RecMonoLinear Nerd Font","IosevkaTermSlab Nerd Font", Arial, sans-serif;
+  --heading-font: "RecMonoCasual Nerd Font", monospace;
+  --base-font-size: larger;
+  --line-height: 1.3;
+
+  /* Spacing */
+  --padding-small: 0.25em;
+  --padding-medium: 0.5em;
+  --indent-base: 1em;
+  --heading-scale: 1.1;
+
+  /* Background Patterns */
+
+  --main-bg-pattern: conic-gradient(
+    from 90deg at 0.1em 0.1em,
+    var(--background-base) 90deg,
+    var(--background-medium) 0
+  ) 0 0/2em 2em;
+  
+  --radial-gradient: repeating-radial-gradient(
+    circle,
+    #16161680,
+    #16161680 1em,
+    #26262680 1em,
+    #26262680 2em
+    );
+}
+
+
+
+/* Base Elements */
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-base);
+  font-family: var(--body-font);
+  font-size: var(--base-font-size);
+  line-height: var(--line-height);
+  max-width: max-content;
+  background: var(--main-bg-pattern);
+  
+}
+
+a {
+  border: var(--border-width) var(--border-style) var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--background-medium);
+  /* padding: var(--padding-small); */
+}
+
+/* Code & Preformatted Blocks */
+
+br,
+table,
+pre,
+code:not([class*="language-"]) {
+  color: var(--highlight-yellow);
+  border: var(--border-width) var(--border-style) var(--highlight-yellow);
+  padding: var(--padding-medium);
+  width: auto;
+  background:
+    var(--radial-gradient),
+    url('https://raw.githubusercontent.com/kacevoid/walls/refs/heads/main/screentone-256-glitch.png');
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  counter-increment: header-counter;
+  color: var(--accent-color);
+  border: var(--border-width) var(--border-style) var(--accent-color);
+  position: relative;
+  font-family: var(--heading-font);
+  font-weight: 1000;
+  font-size: var(--base-font-size);
+  text-transform: uppercase;
+  background:
+    repeating-linear-gradient(
+      50deg,
+      #16161680,
+      #16161680 1em,
+      #26262680 1em,
+      #26262680 2em
+    ),
+    url('https://raw.githubusercontent.com/kacevoid/walls/refs/heads/main/screentone-256-glitch.png');
+  box-sizing: border-box;
+  margin-left: calc(
+    var(--indent-level) * var(--indent-base)
+  );
+  width: calc(
+    100% - (var(--indent-level) * var(--indent-base))
+  );
+  padding: var(--padding-medium);
+  border-left: 0.5em solid var(--accent-color);
+}
+
+/* Special Elements */
+.code-line {
+  /* Paragraph */
+  p {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    /* margin: 1.2em 0; */
+    /* border: 0.1em dashed var(--highlight-green); */
+  }
+  ul {
+
+  }
+  strong {
+    color: var(--highlight-green);
+    font-weight: 900;
+    padding-bottom: 0.1em;
+    letter-spacing: 0.05em;
+    border-bottom: 1px dashed currentColor;
+  }
+  em {
+    color: var(--highlight-pink);
+    font-style: oblique;
+    font-weight: 500;
+    border-bottom: 0.1em dashed currentColor;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 1px solid var(--primary-color);
+    /* transition: all 0.2s ease-out; */
+  }
+  pre code table br{
+    border-radius: 0.5em;
+    padding: 1em !important;
+    display: block;
+    overflow-x: auto;
+  }
+  
+
+
+}
+
+
+/* Heading Overrides */
+h1 {
+    --accent-color: #009670;
+    --indent-level: 0;
+    font-size: calc(var(--base-font-size) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+    border-color: var(--accent-color) !important;/* Force update */
+    color: var(--accent-color) !important;
+}
+
+h2 {
+    --accent-color: #EE5395;
+    --indent-level: 1;
+    font-size: calc(var(--base-font-size) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+    border-color: var(--accent-color) !important;/* Force update */
+    color: var(--accent-color) !important;
+}
+
+h3 {
+    --accent-color: #42be65;
+    --indent-level: 2;
+    font-size: calc(var(--base-font-size) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+h4 {
+    --accent-color: #FFE97B;
+    --indent-level: 3;
+    font-size: calc(var(--base-font-size) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+h5 {
+    --accent-color: #08BDBA;
+    --indent-level: 4;
+    font-size: calc(var(--base-font-size) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+h6 {
+    --accent-color: #DDE1E6;
+    --indent-level: 5;
+    font-size: calc(var(--base-font-size) * var(--heading-scale) * var(--heading-scale) * var(--heading-scale));
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+/* add more overrides to headings as needed */
+
+blockquote {
+  background: url('https://raw.githubusercontent.com/kacevoid/walls/refs/heads/main/screentone-256-glitch.png');
+  /* background-size: 50%; */
+  padding: var(--padding-medium);
+  color: var(--accent-color);
+  border: var(--border-width) var(--border-style) var(--primary-color);
+  opacity: 0.8;
+}
+
+.foam-tag {
+  color: var(--highlight-pink);
+  background-color: var(--background-base);
+  height: fit-content;
+}
+
+/* Background Offset Properties */
+@property --bg-offset-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --bg-offset-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+::marker {
+  color: var(--accent-color);
+  content: ' ';
+  font-size: var(--base-font-size);
+}

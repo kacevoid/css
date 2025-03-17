@@ -1,0 +1,73 @@
+/* intended for use with vscode markdown rendering */
+markdown.other,
+text.html.markdown,
+meta.function.lua,
+code:not([class*="language-"]) {
+    background-color: #232323;
+    color: #08bdba;
+    border: 1px dashed #08bdba;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+
+
+.markdown-body {
+    max-width: 800px;
+    font-size: 16px;
+}
+
+.markdown-body p {
+    font-size: 16px;
+    line-height: 1.1em;
+    margin-bottom: 2.0em;
+}
+
+.markdown-body li {
+    line-height: 1.5em;
+}
+
+input.task-list-item-checkbox {
+    margin-right: 4px;
+}
+
+img[src*="demo"] {
+    border: 20px #08BDBA solid;
+    -webkit-box-shadow: 4px 4px 16px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow: 4px 4px 16px 0px rgba(50, 50, 50, 0.1);
+    box-shadow: 4px 4px 16px 0px rgba(50, 50, 50, 0.1);
+}
+
+@media only screen and (min-width: 1170px) {
+    img[src*="demo"] {
+        max-width: 130%;
+        margin-left: -20%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+blockquote {
+    font-family: "RecMonoCasual Nerd Font","VictorMono Nerd Font", "IosevkaTermSlab Nerd Font", Arial,
+    sans-serif;
+}
+
+.wikilink:before {
+    content: "[[";
+    opacity: 0.5;
+}
+
+.wikilink:after {
+    content: "]]";
+    opacity: 0.8;
+}
+
+.github-only {
+    display: none;
+}
+
+.announcement {
+    background: #dde1e6;
+    padding: 4px 16px;
+    color: #161616;
+    border-radius: 4px;
+}
